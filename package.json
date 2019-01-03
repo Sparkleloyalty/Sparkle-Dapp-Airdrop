@@ -1,0 +1,33 @@
+{
+  "name": "sparkleairdropdapp",
+  "version": "1.0.0",
+  "description": "Sparkle Token Airdrop Support Dapp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/devmbk/dapp-sparkleairdrop.git"
+  },
+  "keywords": [
+    "dapp",
+    "airdrop",
+    "smartcontract",
+    "tool",
+    "support",
+    "claim",
+    "tokens"
+  ],
+  "author": "Sparklemobile",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/devmbk/dapp-sparkleairdrop#readme",
+  "devDependencies": {
+    "webpack": "^4.28.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "dependencies": {
+    "web3": "^1.0.0-beta.37"
+  }
+}

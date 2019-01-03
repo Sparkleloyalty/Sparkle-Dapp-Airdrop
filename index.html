@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Page favorite icon -->
+    <link href="./favicon.png" rel="icon" type="image/png">
+    <!-- Bootstrap & Page style sheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="css/airdrop.css" rel="stylesheet">
+    <!-- Page title -->
+    <title>ClaimTokens: Sparkle Token Airdrop</title>    
+  </head>
+
+  <body class="text-center">
+    <div class="container">
+      <!-- logo div -->
+      <div class="row">
+        <div class="col"><img class="mb-3" src="media/sparkle_dark_logo.svg" alt="" width="320" height="130">
+      </div>
+    </div>
+    <div class="container">
+      <!-- -->
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+          <h1 class="h4 mb-2 font-weight-normal">Claim Tokens</h1>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+    <div class="container">
+      <!-- -->
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+          <h1 class="h6 mt-2 mb-1 font-weight-normal font12">Sparkle Token Address</h1>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+    <div class="container">
+      <!-- -->
+      <div class="row">
+        <div class="col">                                                   
+          <p class="mb-4 font-weight-normal font10"><span id="token-address"></span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- -->
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+          <button class="btn mb-3 btn-useaddress sparkle-bg-lightblue sparkle-fg-blue font8" data-ethaddress="" type="button" id="wallet-address"></button>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+          <label for="inputEthAddress" class="sr-only">Ethereum Address</label>
+          <input type="text" id="inputEthAddress" class="form-control font12" placeholder="Enter Your Ethereum Address" required autofocus>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+          <div class="alert alert-danger mb-0" id="error-msg" hidden=true>
+            <span id="error-text"></span>
+          </div>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+          <div class="alert alert-info mb-0" id="info-msg" hidden=true>
+            <span id="info-text"></span>
+          </div>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+          <button class="btn btn-lg btn-block btn-claim sparkle-bg-blue sparkle-fg-white" type="button">Claim Tokens</button>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div> <!--   -->
+
+    <div class="container">
+      <!-- -->
+      <div class="row">
+        <div class="col">
+          <p class="mt-2 mb-1 text- font10">(Remaining Tokens: <span id="remaining-tokens"></span>)</p></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- -->
+      <div class="row">
+        <div class="col">
+          <p class="mt-4 mb-2 text-muted font12">&copy; 2018 Sparklemobile</p></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">          
+            <h4 class="modal-title"><span id="popup-header-text"></span></h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <p><span id="popup-body-text"></span></p>
+          </div>
+          <div class="modal-footer">
+            <span id="popup-txhash-text"></span>
+            <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
+    <script src="src/app.js"></script>
+  </body>
+</html>
+
+
+<!--
+
+        <div class="">
+        <button class="collapsible">Need help?</button>
+        <div class="content">
+          <ol style="text-align: left;font-size: 12pt;">
+            <li>Token Address <span id="">0x0</span></li>
+            <li>Step 2</li>
+            <li>Step 3</li>
+          </ol>
+        </div>
+        <button class="collapsible">Open Section 2</button>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+      </div>      
+
+
+    <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    }
+    </script>
+
+    div class="container">
+      <div class="alert alert-danger alert-dismissible fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+      </div>
+    </div>
+
+-->

@@ -1,0 +1,102 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-claimtokens {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-claimtokens .checkbox {
+  font-weight: 400;
+}
+.form-claimtokens .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-claimtokens .form-control:focus {
+  z-index: 2;
+}
+.form-claimtokens input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.modal-header, h4, .close {
+  background-color: #69e781;
+  color:white !important;
+  text-align: center;
+  font-size: 30px;
+}
+.modal-footer {
+  background-color: #ffffff;
+}
+
+.smallertext {
+  font-size: 8pt;
+}
+
+.smallesttext {
+  font-size: 7pt;
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+.sparkle-bg-lightblue {
+  background-color: #e5e9f9;
+}
+
+.sparkle-bg-blue {
+  background-color: #5e72e4;
+}
+
+.sparkle-bg-green {
+  background-color: #69e781;
+}
+
+.sparkle-fg-lightblue {
+  color: #e5e9f9;
+}
+.sparkle-fg-blue {
+  color: #5e72e4;
+}
+.sparkle-fg-green {
+  color: #69e781;
+}
+.sparkle-fg-white {
+  color: white;
+}
+
+.font8 {
+  font-size: 8pt;
+}
+
+.font10 {
+  font-size: 10pt;
+}
+
+.font12 {
+  font-size: 12pt;
+}
+
